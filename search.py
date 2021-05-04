@@ -17,10 +17,10 @@ def kimetsu_search(word, csv_name):
         # JSの関数呼び出し
         eel.view_log_js("『{}』はありません".format(word))
         # 追加
-        #add_flg=input("追加登録しますか？(0:しない 1:する)　＞＞　")
-        #if add_flg=="1":
-        source.append(word)
-        eel.view_log_js("『{}』を追加しました".format(word))
+        add_flg=input("追加登録しますか？(0:しない 1:する)　＞＞　")
+        if add_flg=="1":
+            source.append(word)
+            eel.view_log_js("『{}』を追加しました".format(word))
     
     # CSV書き込み
     df=pd.DataFrame(source,columns=["name"])
