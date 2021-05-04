@@ -6,6 +6,7 @@ app_name="html"
 end_point="index.html"
 size=(700,600)
 
+# JSに関数登録
 @ eel.expose
 def kimetsu_search(word, csv_name):
     search.kimetsu_search(word, csv_name)

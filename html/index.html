@@ -17,9 +17,21 @@
         <script type="text/javascript" src="./eel.js"></script>
         <script>
             search.addEventListener('click', () => {
-                eel.kimetsu_search(search_keyword.value, csv_name.value)
+                // 空欄の時はアラート
+                if (csv_name.value == ""){
+                    alert("CSVファイル名が入力されていません");
+                    return false;
+                }else if (search_keyword.value == ""){
+                    alert("検索ワードが入力されていません");
+                    return false;
+                } else {
+                    // Pythonの関数を呼び出し
+                    eel.kimetsu_search(search_keyword.value, csv_name.value)
+                    return true;
+                }
             })
 
+            // Pythonへ関数登録
             eel.expose(view_log_js)
             function view_log_js(txt){
                 result.value += txt + "\n"
